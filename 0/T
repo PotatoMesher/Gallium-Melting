@@ -1,0 +1,115 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 300;
+
+boundaryField
+{
+/*    top
+    {
+
+        type            fixedValue;
+        value           uniform 300;
+
+
+//        type            zeroGradient;
+
+        type            inletOutlet;
+        inletValue      uniform 300;
+        value           uniform 300;
+
+        //type            advective;
+    }
+
+    sym1
+    {
+        type            symmetry;
+    }
+
+    sym2
+    {
+        type            symmetry;
+    }
+
+    bottom
+    {
+
+        type            fixedValue;
+        value           uniform 300;
+
+
+//        type            zeroGradient;
+
+        type            fixedValue;
+        value           uniform 400;
+    }
+
+    heated_body
+    {
+        type            fixedValue;
+        value           uniform 400;
+        //value           uniform 500;
+    }
+
+    back
+    {
+        type            empty;
+    }
+
+    front
+    {
+        type            empty;
+    }
+*/
+
+	Th
+	{	
+		type		fixedValue;
+		value		uniform 311;
+	}
+
+	Tc
+	{
+		type		fixedValue;
+		value		uniform 301;
+	}
+
+	bottom
+	{
+		type		zeroGradient;
+	}
+
+	top
+	{
+		type		zeroGradient;
+	}
+
+	front
+	{
+		type		empty;
+	}
+
+	back
+	{
+		type		empty;
+	
+	}
+
+}
+
+// ************************************************************************* //	

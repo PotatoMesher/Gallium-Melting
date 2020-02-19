@@ -1,0 +1,112 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      p_rgh;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 2 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+/*
+    top
+    {
+        //type            zeroGradient;
+
+        type            totalPressure;
+        p0              uniform 0;
+        U               U;
+        phi             phi;
+        rho             rhok;
+        psi             none;
+        gamma           1.4;
+        //gamma           1;
+        value           uniform 0;
+
+        //type            advective;
+    }
+
+    sym1
+    {
+        type            symmetry;
+    }
+
+    sym2
+    {
+        type            symmetry;
+    }
+
+    bottom
+    {
+        type            fixedFluxPressure;
+        rho             rhok;
+        value           uniform 0;
+    }
+
+    heated_body
+    {
+        type            fixedFluxPressure;
+        rho             rhok;
+        value           uniform 0;
+    }
+
+    back
+    {
+        type            empty;
+    }
+
+    front
+    {
+        type            empty;
+    }
+*/
+
+	Th
+	{	
+		type		fixedFluxPressure; //zeroGradient;
+		//value		uniform 0;
+	}
+
+	Tc
+	{
+		type		fixedFluxPressure; //zeroGradient;
+		//value		uniform 0;
+	}
+
+	bottom
+	{
+		type		fixedFluxPressure; //zeroGradient;
+		//value		uniform 0;		
+	}
+
+	top
+	{
+		type		fixedFluxPressure; //zeroGradient;
+		//value		uniform 0;
+	}
+
+	front
+	{
+		type		empty;
+	}
+
+	back
+	{
+		type		empty;
+	
+	}
+}
+
+// ************************************************************************* //
